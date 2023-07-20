@@ -17,7 +17,6 @@ services:
       - /var/run/docker.sock:/tmp/docker.sock:ro
     labels:
       - "com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy"
-    network_mode: bridge
 
   letsencrypt:
     image: nginxproxy/acme-companion:2.2
@@ -33,11 +32,9 @@ services:
       - vhost:/etc/nginx/vhost.d
       - html:/usr/share/nginx/html
       - /var/run/docker.sock:/var/run/docker.sock:ro
-    network_mode: bridge
 
 networks:
   default:
-    external: true
     name: nginx
 
 volumes:
