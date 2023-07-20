@@ -24,7 +24,7 @@ services:
 networks:
   default:
     external: true
-    name: nginx-proxy
+    name: nginx
 
 volumes:
     app-mydb:
